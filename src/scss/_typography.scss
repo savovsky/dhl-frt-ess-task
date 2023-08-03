@@ -1,1 +1,32 @@
 $font: sans-serif, Arial, Verdana;
+
+@mixin typography-title1 {
+    font-family: $font;
+    font-size: 14px;
+}
+
+@mixin typography-title3 {
+    font-family: $font;
+    font-size: 14px;
+}
+
+@mixin typography-subtitle1 {
+    font-family: $font;
+    font-size: 13px;
+}
+
+@mixin typography-body2 {
+    font-family: $font;
+    font-size: 12px;
+}
+
+@mixin typography-body3 {
+    font-family: $font;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@mixin typography-body4 {
+    font-family: $font;
+    font-size: 12px;
+}

@@ -1,12 +1,14 @@
 @keyframes fadein {
     0% {
         transform: rotateZ(0) scale(1.5, 1.5);
+        background-color: $color-primary;
         opacity: 1;
         backface-visibility: hidden;
     }
 
     100% {
         transform: rotateZ(0) scale(1, 1);
+        background-color: $color-secondary;
         opacity: 0;
         backface-visibility: hidden;
     }
@@ -37,7 +39,6 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background-color: $color-primary;
             animation: fadein 1s linear infinite;
         }
     }

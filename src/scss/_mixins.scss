@@ -77,6 +77,11 @@
     z-index: 1;
 }
 
+@mixin container-no-items {
+    @include typography-body3;
+    padding: 0 28px;
+}
+
 @mixin options-list {
     @include typography-subtitle1;
     width: 100%;
@@ -114,5 +119,83 @@
                 color: $color-primary;
             }
         }
+    }
+}
+
+@mixin icon-button {
+    @include typography-title3;
+    margin: 0;
+    padding: 0;
+    border: unset;
+    outline: unset;
+    background-color: unset;
+    color: $color-fog;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:focus-within,
+    &:focus,
+    &:hover {
+        @include transition;
+        color: $color-accent;
+
+        &.active {
+            color: $color-fog;
+        }
+    }
+
+    &.fade-in {
+        @include fade-in;
+    }
+
+    &.disabled {
+        @include item-disabled;
+    }
+
+    &.active {
+        color: $color-accent;
+    }
+}
+
+@mixin text-input-label {
+    @include typography-body4;
+    display: inline-block;
+    padding: 0 0 3px 10px;
+    color: $color-fog;
+    text-transform: capitalize;
+
+    &.error {
+        color: $color-warn;
+    }
+
+    &.disabled {
+        color: $color-fog-medium;
+    }
+}
+
+@mixin text-input {
+    @include transition;
+    @include typography-title1;
+    min-width: 50px;
+    padding: 5px 10px;
+    border: 1px solid $color-fog-light;
+    border-radius: 2px;
+    outline: none;
+    color: $color-dark;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    @supports (-moz-appearance: none) {
+        text-overflow: ellipsis ellipsis;
+    }
+
+    &:focus {
+        @include transition;
+        border-color: $color-fog-medium;
+        background-color: $color-white;
+    }
+
+    &:hover {
+        @include transition;
+        border-color: $color-fog-medium;
     }
 }
