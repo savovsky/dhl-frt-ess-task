@@ -1,0 +1,75 @@
+{
+  "name": "dhl-frt-ess-task",
+  "version": "0.1.0",
+  "description": "DHL FRT ESS - React JS Dev - Interview Task",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/savovsky/dhl-frt-ess-task.git"
+  },
+  "author": "Miroslav Savovski",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@reduxjs/toolkit": "1.9.1",
+    "normalize.css": "^8.0.1",
+    "react": "16.10.0",
+    "react-dom": "16.9.0",
+    "react-redux": "^8.0.5",
+    "react-scripts": "5.0.0"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules build coverage",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "testcover": "yarn test --coverage --watchAll=false",
+    "testcovero": "start ./coverage/lcov-report/index.html",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./ --ext js --ext jsx",
+    "lint-fix": "eslint ./ --fix --ext js --ext jsx",
+    "lint-sass": "sass-lint src/scss/**/*.scss -v -q",
+    "flow": "flow"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@sheerun/mutationobserver-shim": "^0.3.3",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^14.4.3",
+    "babel-eslint": "10.0.3",
+    "eslint": "6.1.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-flowtype": "5.10.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "flow-bin": "0.118.0",
+    "msw": "^1.2.0",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.12.0",
+    "sass": "1.55.0",
+    "sass-lint": "^1.13.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

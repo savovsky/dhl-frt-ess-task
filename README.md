@@ -1,2 +1,3 @@
-# dhl-frt-ess-task
-DHL FRT ESS - React JS Dev - Interview Task
+# DHL FRT ESS Task
+
+React JS Dev - Interview Task

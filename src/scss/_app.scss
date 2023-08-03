@@ -1,0 +1,6 @@
+.app-container {
+    @include display-flex;
+    min-height: 100vh;
+    padding: 20px 0;
+    font-family: $font;
+}
