@@ -1,1 +1,6 @@
-
+.fel__card {
+    @include card-shadow;
+    border: 1px solid $color-slate;
+    border-radius: 3px;
+    background-color: $color-white;
+}

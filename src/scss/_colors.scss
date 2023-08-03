@@ -1,0 +1,26 @@
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-dark: #2d3137;
+$color-fog: #58595b;
+$color-fog-medium: #929497;
+$color-fog-light: #c6c7c9;
+$color-slate: #dcdee1;
+$color-slate-medium: #ebedf0;
+$color-slate-light: #f5f6f8;
+$color-slate-ultra-light: #f9fafc;
+
+$color-cyan-bluish-gray: #abb8c3;
+$color-vivid-red: #cf2e2e;
+$color-luminous-vivid-orange: #ff6900;
+$color-luminous-vivid-amber: #fcb900;
+
+$color-primary: $color-vivid-red;
+$color-secondary: $color-luminous-vivid-amber;
+$color-accent: $color-vivid-red;
+
+$color-shadow: (
+    '1': rgba(0, 0, 0, 0.60),
+    '2': rgba(80, 80, 80, 0.40),
+    '3': rgba(80, 80, 80, 0.20)
+);

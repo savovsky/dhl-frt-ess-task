@@ -70,7 +70,7 @@ rules:
   brace-style: 1
   clean-import-paths: 1
   empty-args: 1
-  hex-length: 1
+  hex-length: 0
   hex-notation:
     - 2
     - style: lowercase

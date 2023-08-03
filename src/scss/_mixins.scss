@@ -6,3 +6,113 @@
     display: flex;
     // sass-lint:enable no-duplicate-properties
 }
+
+@mixin item-disabled {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@mixin media-query-under ($breakpoint-name) {
+    @media only screen and (max-width: map-get($breakpoint, $breakpoint-name)) {
+        @content;
+    }
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes zoom-in {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@mixin fade-in {
+    animation: fade-in ease-in-out 0.5s;
+}
+
+@mixin zoom-in {
+    animation: zoom-in ease 0.5s;
+}
+
+@mixin transition {
+    transition:
+    background-color 0.2s ease-out,
+    box-shadow 0.2s ease-out,
+    border 0.2s ease-out,
+    border-color 0.2s ease-out,
+    color 0.2s ease-out,
+    height 0.2s ease-out,
+    opacity 0.2s ease-out;
+}
+
+@mixin btn-shadow {
+    box-shadow:
+    0 3px 1px -2px map-get($color-shadow, '1'),
+    0 2px 2px 0 map-get($color-shadow, '2'),
+    0 1px 5px 0 map-get($color-shadow, '3');
+}
+
+@mixin btn-shadow-hover {
+    box-shadow:
+    0 2px 4px -1px map-get($color-shadow, '1'),
+    0 4px 5px 0 map-get($color-shadow, '2'),
+    0 1px 10px 0 map-get($color-shadow, '3');
+}
+
+@mixin card-shadow {
+    box-shadow:
+    0 2px 4px 0 map-get($color-shadow, '1'),
+    0 0 15px 0 map-get($color-shadow, '2');
+}
+
+@mixin options-container {
+    position: absolute;
+    min-width: 90px;
+    min-height: 36px;
+    background-color: $color-white;
+    z-index: 1;
+}
+
+@mixin options-list {
+    @include typography-subtitle1;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    outline: unset;
+    background-color: $color-white;
+    text-align: left;
+    text-transform: capitalize;
+    cursor: pointer;
+    list-style-type: none;
+
+    li {
+        padding: 10px;
+        outline: unset;
+        color: $color-fog;
+
+        &.current-option {
+            background-color: $color-slate-ultra-light;
+            color: $color-primary;
+        }
+
+        &:focus,
+        &:hover {
+            transition: background-color 0.2s ease-out;
+            border-radius: 2px;
+            background-color: $color-slate-medium;
+        }
+
+        .fel__current-option-icon {
+            display: inline-block;
+            min-width: 25px;
+
+            .fa-check {
+                color: $color-primary;
+            }
+        }
+    }
+}
