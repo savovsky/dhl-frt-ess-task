@@ -2,6 +2,7 @@
   "name": "dhl-frt-ess-task",
   "version": "0.1.0",
   "description": "DHL FRT ESS - React JS Dev - Interview Task",
+  "homepage": "https://savovsky.github.io/dhl-frt-ess-task",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -33,7 +34,9 @@
     "lint": "eslint ./ --ext js --ext jsx",
     "lint-fix": "eslint ./ --fix --ext js --ext jsx",
     "lint-sass": "sass-lint src/scss/**/*.scss -v -q",
-    "flow": "flow"
+    "flow": "flow",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -54,6 +57,7 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "flow-bin": "0.118.0",
+    "gh-pages": "^5.0.0",
     "msw": "^1.2.0",
     "prettier": "^1.16.4",
     "react-test-renderer": "^16.12.0",
