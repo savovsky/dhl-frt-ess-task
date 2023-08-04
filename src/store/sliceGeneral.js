@@ -1,19 +1,20 @@
 /* eslint-disable no-param-reassign */
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    isAlbumsView: true,
+    isAlbumView: true,
 };
 
 export const sliceGeneral = createSlice({
     name: 'general',
     initialState,
     reducers: {
-        toggleIsAlbumsView(state) {
-            state.isAlbumsView = !state.isAlbumsView;
+        toggleIsAlbumView(state) {
+            state.isAlbumView = !state.isAlbumView;
         },
     },
 });
 
 // Actions
-export const { toggleIsAlbumsView } = sliceGeneral.actions;
+export const { toggleIsAlbumView } = sliceGeneral.actions;

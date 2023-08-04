@@ -3,37 +3,40 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { toggleIsAlbumsView } from '../../../../../store/sliceGeneral';
+import { toggleIsAlbumView } from '../../../../../store/sliceGeneral';
 
+import useSliceFavorites from '../../../../../customHooks/useSliceFavorites';
 import str from '../../../../../utils/stringsUtils';
 import Tooltip from '../../../../Tooltip';
 import ButtonIcon from '../../../../ButtonIcon';
 
-function BtnToggle() {
+type Props = {
+    isAlbumView: boolean,
+};
+
+function BtnToggle({ isAlbumView }: Props) {
     const dispatch = useDispatch();
+    const { hasFavoritePhotos } = useSliceFavorites();
 
     const handleOnClick = () => {
-        dispatch(toggleIsAlbumsView());
+        dispatch(toggleIsAlbumView());
     };
 
-    const isAlbumsView = true;
-
     const conditionalContent = () => {
-        if (isAlbumsView) {
+        if (isAlbumView) {
             return (
                 <Tooltip
                     content={str.btnFavorteDisabled}
                     placement="top"
                     width="150px"
-                    isDisabled={false}
-                    offset="-20px"
+                    isDisabled={hasFavoritePhotos}
                 >
                     <ButtonIcon
                         handleOnClick={handleOnClick}
                         icon="heart"
                         label={str.btnFavorite}
                         arialabel="Display Favorite Photos Button"
-                        isDisabled={false}
+                        isDisabled={!hasFavoritePhotos}
                         dataTestid="favorite-btn"
                     />
                 </Tooltip>

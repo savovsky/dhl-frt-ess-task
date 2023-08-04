@@ -4,8 +4,8 @@ const initialState = {
     favoritePhotos: [],
 };
 
-export const sliceFavoritePhotos = createSlice({
-    name: 'favoritePhotos',
+export const sliceFavorites = createSlice({
+    name: 'favorites',
     initialState,
     reducers: {
         addPhotoToFavorites(state, action) {
@@ -15,4 +15,4 @@ export const sliceFavoritePhotos = createSlice({
 });
 
 // Actions
-export const { addPhotoToFavorites } = sliceFavoritePhotos.actions;
+export const { addPhotoToFavorites } = sliceFavorites.actions;

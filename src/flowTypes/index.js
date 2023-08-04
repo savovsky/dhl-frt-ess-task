@@ -7,10 +7,15 @@ export type Option = {
 };
 
 export type GeneralSlice = {
-    isAlbumsView: boolean,
+    isAlbumView: boolean,
+};
+
+export type FavoritesSlice = {
+    favoritePhotos: Array<string>,
 };
 
 // IMPORTANT - The keys correspond to the slices' names!
 export type State = {
     general: GeneralSlice,
+    favorites: FavoritesSlice,
 };
