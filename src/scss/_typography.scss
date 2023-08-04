@@ -31,6 +31,11 @@ $font: sans-serif, Arial, Verdana;
     font-size: 13px;
 }
 
+@mixin typography-subtitle4 {
+    font-family: $font;
+    font-size: 11px;
+}
+
 @mixin typography-body2 {
     font-family: $font;
     font-size: 12px;

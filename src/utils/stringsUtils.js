@@ -19,4 +19,10 @@ export default {
 
     // Labels
     albums: 'albums',
+
+    // Tooltip
+    top: 'top',
+    right: 'right',
+    bottom: 'bottom',
+    left: 'left',
 };
