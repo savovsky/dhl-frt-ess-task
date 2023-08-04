@@ -16,4 +16,7 @@ export default {
     // Erros
     requestFailedWithStatus: 'Request failed with status code',
     somethingHasGoneWrong: 'Something Has Gone Wrong',
+
+    // Labels
+    albums: 'albums',
 };

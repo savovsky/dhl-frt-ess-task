@@ -13,6 +13,11 @@
     pointer-events: none;
 }
 
+@mixin message {
+    @include typography-title1;
+    word-wrap: break-word;
+}
+
 @mixin media-query-under ($breakpoint-name) {
     @media only screen and (max-width: map-get($breakpoint, $breakpoint-name)) {
         @content;

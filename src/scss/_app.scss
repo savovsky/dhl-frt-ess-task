@@ -1,5 +1,4 @@
 .app-container {
-    // min-height: 100vh;
     padding: 20px 0;
     color: $color-dark;
     font-family: $font;
@@ -21,15 +20,22 @@
         @include typography-xl;
         margin: 0;
         padding: 0;
+        color: $color-black;
     }
 }
 
 .app-body {
     width: 60%;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
 
     @include media-query-under('md') {
         width: 90%;
     }
+}
+
+.loading-wrapper {
+    @include display-flex;
+    justify-content: center;
+    margin: 150px 0 0;
 }
