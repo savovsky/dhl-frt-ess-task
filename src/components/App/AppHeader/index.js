@@ -4,7 +4,7 @@ import React from 'react';
 
 import str from '../../../utils/stringsUtils';
 
-function Header() {
+function AppHeader() {
     return (
         <header className="app-header" data-testid="app-header">
             <h1>{str.appTitle}</h1>
@@ -13,4 +13,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default AppHeader;

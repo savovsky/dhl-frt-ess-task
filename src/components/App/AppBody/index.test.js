@@ -2,20 +2,20 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { render, cleanup } from '@testing-library/react';
 
-import { store } from '../../store';
+import { store } from '../../../store';
 
-import App from '.';
+import AppBody from '.';
 
 afterEach(cleanup);
 
-describe('<App />', () => {
-    const testMsg = 'Should render Component correctly';
-    const componentId = 'app-container';
+describe('<AppBody />', () => {
+    const testMsg = 'Should render Component';
+    const componentId = 'app-body';
 
     test(testMsg, () => {
         const { getByTestId } = render(
             <Provider store={store}>
-                <App />
+                <AppBody />
             </Provider>,
         );
 

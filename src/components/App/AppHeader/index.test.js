@@ -2,16 +2,16 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 
 import str from '../../../utils/stringsUtils';
-import Header from '.';
+import AppHeader from '.';
 
 afterEach(cleanup);
 
-describe('<Header />', () => {
+describe('<AppHeader />', () => {
     const testMsg = 'Should render Component';
     const componentId = 'app-header';
 
     test(`${testMsg} correctly`, () => {
-        const { getByTestId, getByText } = render(<Header />);
+        const { getByTestId, getByText } = render(<AppHeader />);
 
         expect(getByTestId(componentId)).toBeTruthy();
         expect(getByText(str.appTitle)).toBeInTheDocument();
