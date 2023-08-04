@@ -9,13 +9,16 @@ import App from '.';
 afterEach(cleanup);
 
 describe('<App />', () => {
-    test('Should rnder Component correctly', () => {
+    const testMsg = 'Should render Component';
+    const componentId = 'app-container';
+
+    test(testMsg, () => {
         const { getByTestId } = render(
             <Provider store={store}>
                 <App />
             </Provider>,
         );
 
-        expect(getByTestId('app-container')).toBeTruthy();
+        expect(getByTestId(componentId)).toBeTruthy();
     });
 });

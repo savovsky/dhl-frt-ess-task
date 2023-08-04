@@ -2,11 +2,13 @@
 
 import React from 'react';
 
+import str from '../../../utils/stringsUtils';
+
 function Header() {
     return (
         <header className="app-header" data-testid="app-header">
-            <h1>DHL FRT ESS</h1>
-            <h2>React JS Dev - Interview Task</h2>
+            <h1>{str.appTitle}</h1>
+            <h2>{str.appSubTitle}</h2>
         </header>
     );
 }
