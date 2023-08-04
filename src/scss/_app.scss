@@ -1,7 +1,25 @@
 .app-container {
-    @include display-flex;
     // min-height: 100vh;
     padding: 20px 0;
     color: $color-dark;
     font-family: $font;
+}
+
+.app-header {
+    padding: 40px;
+    border-bottom: 18px solid $color-primary;
+    background: $color-secondary url('../assets/intro-tertiary.jpg') center 0 no-repeat;
+
+    h1 {
+        @include typography-xxl-bold;
+        margin: 0;
+        padding: 0 0 10px;
+        color: $color-primary;
+    }
+
+    h2 {
+        @include typography-xl;
+        margin: 0;
+        padding: 0;
+    }
 }

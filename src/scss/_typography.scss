@@ -1,5 +1,21 @@
 $font: sans-serif, Arial, Verdana;
 
+@mixin typography-xxl-bold {
+    font-family: $font;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: normal;
+}
+
+@mixin typography-xl {
+    font-family: $font;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: normal;
+}
+
+/////////
+
 @mixin typography-title1 {
     font-family: $font;
     font-size: 14px;
