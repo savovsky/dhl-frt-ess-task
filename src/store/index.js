@@ -4,9 +4,11 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 import { apiAlbums } from './apiAlbums';
 
 import { sliceFavoritePhotos } from './sliceFavoritePhotos';
+import { sliceGeneral } from './sliceGeneral';
 
 const reducer = {
     [apiAlbums.reducerPath]: apiAlbums.reducer,
+    [sliceGeneral.name]: sliceGeneral.reducer,
     [sliceFavoritePhotos.name]: sliceFavoritePhotos.reducer,
 };
 

@@ -1,13 +1,20 @@
 // @flow
 
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { toggleIsAlbumsView } from '../../../../../store/sliceGeneral';
 
 import str from '../../../../../utils/stringsUtils';
 import Tooltip from '../../../../Tooltip';
 import ButtonIcon from '../../../../ButtonIcon';
 
 function BtnToggle() {
-    const handleOnClick = () => {};
+    const dispatch = useDispatch();
+
+    const handleOnClick = () => {
+        dispatch(toggleIsAlbumsView());
+    };
 
     const isAlbumsView = true;
 
