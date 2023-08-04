@@ -9,6 +9,8 @@
 
 [options]
 module.name_mapper='react-redux' -> '<PROJECT_ROOT>/flow/react-redux.js.flow'
+module.name_mapper='@fortawesome/free-solid-svg-icons' -> '<PROJECT_ROOT>/flow/@fortawesome.js.flow'
+module.name_mapper='@fortawesome/react-fontawesome' -> '<PROJECT_ROOT>/flow/@fortawesome.js.flow'
 module.file_ext=.js
 module.file_ext=.json
 module.file_ext=.md

@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+import handleAlbumsData from '../utils/handleAlbumsData';
+import commonUtils from '../utils/commonUtils';
 import {
     timeout,
     protocol,
@@ -8,6 +10,8 @@ import {
     prepareHeaders,
     keepUnusedDataFor,
 } from './storeCommonUtils';
+
+const { httpErrorMessage } = commonUtils;
 
 export const apiAlbums = createApi({
     reducerPath: 'apiAlbums',
@@ -29,14 +33,12 @@ export const apiAlbums = createApi({
                 },
 
                 transformResponse: response => {
-                    const albums = response;
+                    const albums = handleAlbumsData(response);
 
                     return { albums };
                 },
 
-                transformErrorResponse: response => {
-                    return response;
-                },
+                transformErrorResponse: response => httpErrorMessage(response),
             }),
         };
     },
