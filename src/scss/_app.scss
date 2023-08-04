@@ -34,6 +34,11 @@
     }
 }
 
+.app-tools {
+    @include display-flex;
+    justify-content: space-between;
+}
+
 .loading-wrapper {
     @include display-flex;
     justify-content: center;

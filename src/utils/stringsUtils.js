@@ -20,6 +20,13 @@ export default {
     // Labels
     albums: 'albums',
 
+    // Buttons
+    btnFavorite: 'favorite',
+    btnAlbums: 'albums',
+
+    // Tooltips
+    btnFavorteDisabled: 'They are no selected photos',
+
     // Tooltip
     top: 'top',
     right: 'right',

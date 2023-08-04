@@ -142,7 +142,7 @@
     &:focus,
     &:hover {
         @include transition;
-        color: $color-accent;
+        color: $color-primary;
 
         &.active {
             color: $color-fog;
