@@ -40,9 +40,20 @@ export const apiAlbums = createApi({
 
                 transformErrorResponse: response => httpErrorMessage(response),
             }),
+
+            fetchAlbumPhotos: builder.query({
+                query: albumId => {
+                    return {
+                        method: 'GET',
+                        url: `${albumId}/photos`,
+                    };
+                },
+
+                transformErrorResponse: response => httpErrorMessage(response),
+            }),
         };
     },
 });
 
 // Auto-generated React hooks
-export const { useFetchAlbumsQuery } = apiAlbums;
+export const { useFetchAlbumsQuery, useFetchAlbumPhotosQuery } = apiAlbums;

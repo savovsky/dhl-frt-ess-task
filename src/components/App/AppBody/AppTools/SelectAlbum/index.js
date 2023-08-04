@@ -1,6 +1,9 @@
 // @flow
 
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { setCurrentAlbum } from '../../../../../store/sliceGeneral';
 
 import str from '../../../../../utils/stringsUtils';
 import ComboBox from '../../../../ComboBox';
@@ -12,7 +15,10 @@ type Props = {
 };
 
 function SelectAlbum({ optionItems }: Props) {
-    const handleComboOnOptionSelect = () => {};
+    const dispatch = useDispatch();
+    const handleComboOnOptionSelect = (inputId: string, optionId: string) => {
+        dispatch(setCurrentAlbum(optionId));
+    };
 
     return (
         <div style={{ width: '100%' }}>

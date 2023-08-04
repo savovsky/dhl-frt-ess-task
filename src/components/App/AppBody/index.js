@@ -5,6 +5,7 @@ import React from 'react';
 import LoaderSpin from '../../LoaderSpin';
 import HttpError from '../../HttpError';
 import AppTools from './AppTools';
+import Photos from './Photos';
 
 import { useFetchAlbumsQuery } from '../../../store/apiAlbums';
 
@@ -30,6 +31,7 @@ function AppBody() {
             return (
                 <>
                     <AppTools optionItems={data.albums} />
+                    <Photos />
                 </>
             );
         }
