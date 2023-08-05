@@ -71,6 +71,28 @@ const httpErrorMessage = (error: any): string => {
     return truncateString(errorMsg, 150);
 };
 
+/**
+ * Returns 'N/A', when recieves an empty string or null AND 'defaultValue' IS NOT provided.
+ * Returns the 'defaultValue', when recieves an empty string or null AND 'defaultValue' IS provided.
+ * Else returns the value converted to a string.
+ * @param {(number|string|null)} value
+ * @param {string} defaultValue
+ * @returns `string`
+ */
+const valueToString = (
+    value: number | string | null,
+    defaultValue?: string,
+): string => {
+    const defaultVal =
+        defaultValue || defaultValue === '' ? defaultValue : str.notAvailable;
+
+    if (typeof value === 'string') {
+        return value.trim() ? value.trim() : defaultVal;
+    }
+
+    return value || value === 0 ? value.toString() : defaultVal;
+};
+
 // TODO add description and tests
 const capitalizeFirstChar = (text: string) => {
     return text.charAt(0).toUpperCase() + text.slice(1);
@@ -81,5 +103,6 @@ export default {
     isArray,
     truncateString,
     httpErrorMessage,
+    valueToString,
     capitalizeFirstChar,
 };

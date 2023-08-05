@@ -3,6 +3,7 @@
 import React from 'react';
 
 import useSliceGeneral from '../../../../customHooks/useSliceGeneral';
+import useSliceFavorites from '../../../../customHooks/useSliceFavorites';
 import LoaderSpin from '../../../LoaderSpin';
 import HttpError from '../../../HttpError';
 import Photos from './Photos';
@@ -11,6 +12,7 @@ import { useFetchAlbumPhotosQuery } from '../../../../store/apiAlbums';
 
 function PhotosConatiner() {
     const { currentAlbum, isAlbumView } = useSliceGeneral();
+    const { favoritePhotos } = useSliceFavorites();
 
     const {
         isFetching,
@@ -25,7 +27,7 @@ function PhotosConatiner() {
             return data.photos;
         }
 
-        return [];
+        return favoritePhotos;
     };
 
     const conditionalContent = () => {

@@ -3,7 +3,13 @@
 import commonUtils from './commonUtils';
 import str from './stringsUtils';
 
-const { isArray, stringToId, truncateString, httpErrorMessage } = commonUtils;
+const {
+    isArray,
+    stringToId,
+    truncateString,
+    httpErrorMessage,
+    valueToString,
+} = commonUtils;
 
 describe('commonUtils', () => {
     const testMsg = 'Returns correct boolean';
@@ -188,6 +194,89 @@ describe('commonUtils', () => {
             const output = `${error150chars}...`;
 
             expect(httpErrorMessage(error)).toEqual(output);
+        });
+    });
+
+    describe(`${valueToString.name}`, () => {
+        test('Returns correct string', () => {
+            const value = null;
+            const output = str.notAvailable;
+
+            expect(valueToString(value)).toEqual(output);
+        });
+
+        test('Returns correct string', () => {
+            const value = null;
+            const defaultValue = '';
+            const output = defaultValue;
+
+            expect(valueToString(value, defaultValue)).toEqual(output);
+        });
+
+        test('Returns correct string', () => {
+            const value = null;
+            const defaultValue = 'foo';
+            const output = defaultValue;
+
+            expect(valueToString(value, defaultValue)).toEqual(output);
+        });
+
+        test('Returns correct string', () => {
+            const value = '';
+            const output = str.notAvailable;
+
+            expect(valueToString(value)).toEqual(output);
+        });
+
+        test('Returns correct string', () => {
+            const value = '';
+            const defaultValue = 'foo';
+            const output = defaultValue;
+
+            expect(valueToString(value, defaultValue)).toEqual(output);
+        });
+
+        test('Returns correct string', () => {
+            const value = '  ';
+            const output = str.notAvailable;
+
+            expect(valueToString(value)).toEqual(output);
+        });
+
+        test('Returns correct string', () => {
+            const value = '  ';
+            const defaultValue = 'foo';
+            const output = defaultValue;
+
+            expect(valueToString(value, defaultValue)).toEqual(output);
+        });
+
+        test('Returns correct string', () => {
+            const value = ' ab c  ';
+            const output = 'ab c';
+
+            expect(valueToString(value)).toEqual(output);
+        });
+
+        test('Returns correct string', () => {
+            const value = 0;
+            const output = '0';
+
+            expect(valueToString(value)).toEqual(output);
+        });
+
+        test('Returns correct string', () => {
+            const value = 10;
+            const output = '10';
+
+            expect(valueToString(value)).toEqual(output);
+        });
+
+        test('Returns correct string', () => {
+            const value = 'abc';
+            const output = 'abc';
+
+            expect(valueToString(value)).toEqual(output);
         });
     });
 });

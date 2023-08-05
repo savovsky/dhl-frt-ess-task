@@ -8,7 +8,7 @@ import type {
     Photo,
 } from '../flowTypes/photosTypes';
 
-const { isArray, capitalizeFirstChar } = commonUtils;
+const { isArray, capitalizeFirstChar, valueToString } = commonUtils;
 
 const handleAlbumPhotosData = (response: AlbumPhotosResponse): Array<Photo> => {
     const photos = [];
@@ -23,11 +23,11 @@ const handleAlbumPhotosData = (response: AlbumPhotosResponse): Array<Photo> => {
                 item.url
             ) {
                 photos.push({
-                    albumId: `${item.id}`,
-                    id: `${item.id}`,
-                    thumbnailUrl: item.title,
-                    title: capitalizeFirstChar(item.title),
-                    url: item.title,
+                    albumId: valueToString(item.albumId),
+                    id: valueToString(item.id),
+                    thumbnailUrl: valueToString(item.thumbnailUrl),
+                    title: capitalizeFirstChar(valueToString(item.title)),
+                    url: valueToString(item.url),
                 });
             }
         });

@@ -1,6 +1,8 @@
 // @flow
 /* istanbul ignore file */
 
+import type { Photo } from './photosTypes';
+
 export type Option = {
     id: string,
     value: string,
@@ -12,7 +14,7 @@ export type GeneralSlice = {
 };
 
 export type FavoritesSlice = {
-    favoritePhotos: Array<string>,
+    favoritePhotos: Array<Photo>,
 };
 
 // IMPORTANT - The keys correspond to the slices' names!

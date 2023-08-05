@@ -3,9 +3,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { FavoritesSlice } from '../flowTypes';
+import type { Photo } from '../flowTypes/photosTypes';
 
 type Slice = FavoritesSlice;
-type Action = { payload: string };
+type Action1 = { payload: Photo };
+type Action2 = { payload: string };
 
 const initialState: Slice = {
     favoritePhotos: [],
@@ -15,13 +17,13 @@ export const sliceFavorites = createSlice({
     name: 'favorites',
     initialState,
     reducers: {
-        addPhotoToFavorites(state: Slice, action: Action) {
+        addPhotoToFavorites(state: Slice, action: Action1) {
             state.favoritePhotos.push(action.payload);
         },
 
-        removePhotoFromFavorites(state: Slice, action: Action) {
+        removePhotoFromFavorites(state: Slice, action: Action2) {
             const index = state.favoritePhotos.findIndex(
-                (item: string) => item === action.payload,
+                (item: Photo) => item.id === action.payload,
             );
 
             state.favoritePhotos.splice(index, 1);

@@ -2,8 +2,6 @@
 
 import React from 'react';
 
-// import useSliceGeneral from '../../../../customHooks/useSliceGeneral';
-// import SelectAlbum from './SelectAlbum';
 import BtnLike from './BtnLike';
 
 import type { Photo } from '../../flowTypes/photosTypes';
@@ -13,12 +11,11 @@ type Props = {
 };
 
 function Card({ photo }: Props) {
-    // const { isAlbumView } = useSliceGeneral();
-
     return (
         <>
+            <img src={photo.thumbnailUrl} alt={photo.title} />
             <p>{photo.title}</p>
-            <BtnLike photoId={photo.id} />
+            <BtnLike photo={photo} />
         </>
     );
 }
