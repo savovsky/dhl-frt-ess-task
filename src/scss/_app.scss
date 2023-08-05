@@ -56,3 +56,16 @@
         margin: 60px 0 0;
     }
 }
+
+.photos-conatiner {
+    @include display-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.image-container {
+    min-width: 190px;
+    height: 190px;
+    background-color: $color-slate-medium;
+
+}

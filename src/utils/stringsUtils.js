@@ -21,7 +21,7 @@ export default {
     albums: 'albums',
 
     // Buttons
-    btnFavorite: 'favorite',
+    btnFavorite: 'favorite photos',
     btnAlbums: 'albums',
 
     // Tooltips

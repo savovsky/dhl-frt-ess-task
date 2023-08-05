@@ -13,8 +13,13 @@ type Props = {
 function Card({ photo }: Props) {
     return (
         <>
-            <img src={photo.thumbnailUrl} alt={photo.title} />
-            <p>{photo.title}</p>
+            <div>
+                <div className="image-container">
+                    <img src={photo.thumbnailUrl} alt={photo.title} />
+                </div>
+                <p>{photo.title}</p>
+            </div>
+
             <BtnLike photo={photo} />
         </>
     );

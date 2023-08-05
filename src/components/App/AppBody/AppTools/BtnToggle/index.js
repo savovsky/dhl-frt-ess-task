@@ -7,6 +7,7 @@ import { toggleIsAlbumView } from '../../../../../store/sliceGeneral';
 
 import useSliceFavorites from '../../../../../customHooks/useSliceFavorites';
 import str from '../../../../../utils/stringsUtils';
+import commonUtils from '../../../../../utils/commonUtils';
 import Tooltip from '../../../../Tooltip';
 import ButtonIcon from '../../../../ButtonIcon';
 
@@ -14,12 +15,15 @@ type Props = {
     isAlbumView: boolean,
 };
 
+const { scrollToTop } = commonUtils;
+
 function BtnToggle({ isAlbumView }: Props) {
     const dispatch = useDispatch();
     const { hasFavoritePhotos } = useSliceFavorites();
 
     const handleOnClick = () => {
         dispatch(toggleIsAlbumView());
+        scrollToTop();
     };
 
     const conditionalContent = () => {
@@ -38,6 +42,7 @@ function BtnToggle({ isAlbumView }: Props) {
                         arialabel="Display Favorite Photos Button"
                         isDisabled={!hasFavoritePhotos}
                         dataTestid="favorite-btn"
+                        margin="0 0 0 20px"
                     />
                 </Tooltip>
             );
@@ -49,6 +54,7 @@ function BtnToggle({ isAlbumView }: Props) {
                     label={str.btnAlbums}
                     arialabel="Display Albums View Button"
                     dataTestid="albums-btn"
+                    margin="0 0 0 20px"
                 />
             );
         }

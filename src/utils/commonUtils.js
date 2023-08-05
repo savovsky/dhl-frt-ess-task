@@ -93,6 +93,21 @@ const valueToString = (
     return value || value === 0 ? value.toString() : defaultVal;
 };
 
+/**
+ * Scrolls page to the top.
+ */
+function scrollToTop(): void {
+    /* istanbul ignore else */
+    if (document.body) {
+        document.body.scrollTop = 0; // For Safari
+    }
+
+    /* istanbul ignore else */
+    if (document.documentElement) {
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox
+    }
+}
+
 // TODO add description and tests
 const capitalizeFirstChar = (text: string) => {
     return text.charAt(0).toUpperCase() + text.slice(1);
@@ -104,5 +119,6 @@ export default {
     truncateString,
     httpErrorMessage,
     valueToString,
+    scrollToTop,
     capitalizeFirstChar,
 };

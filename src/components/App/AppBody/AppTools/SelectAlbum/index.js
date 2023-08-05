@@ -22,16 +22,16 @@ function SelectAlbum({ optionItems, currentAlbum }: Props) {
     };
 
     return (
-        <div style={{ width: '100%' }}>
-            <ComboBox
-                inputId={str.albums}
-                label={str.albums}
-                currentOptionId={currentAlbum}
-                optionItems={optionItems}
-                handleComboOnOptionSelect={handleComboOnOptionSelect}
-                maxWidth="550px"
-            />
-        </div>
+        <ComboBox
+            inputId={str.albums}
+            label={str.albums}
+            currentOptionId={currentAlbum}
+            optionItems={optionItems}
+            handleComboOnOptionSelect={handleComboOnOptionSelect}
+            moreProps={{
+                style: { width: '550px' },
+            }}
+        />
     );
 }
 

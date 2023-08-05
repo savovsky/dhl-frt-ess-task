@@ -9,6 +9,7 @@ const {
     truncateString,
     httpErrorMessage,
     valueToString,
+    scrollToTop,
 } = commonUtils;
 
 describe('commonUtils', () => {
@@ -277,6 +278,42 @@ describe('commonUtils', () => {
             const output = 'abc';
 
             expect(valueToString(value)).toEqual(output);
+        });
+    });
+
+    describe(`${scrollToTop.name}`, () => {
+        test('set "scrollTop" to 0', () => {
+            global.window = Object.create(window);
+            Object.defineProperty(window, 'body', {
+                value: {
+                    scrollTop: {
+                        value: 100,
+                        writable: true,
+                    },
+                },
+                writable: true,
+            });
+
+            scrollToTop();
+
+            expect(global.document.body.scrollTop).toEqual(0);
+        });
+
+        test('set "scrollTop" to 0', () => {
+            global.window = Object.create(window);
+            Object.defineProperty(window, 'documentElement', {
+                value: {
+                    scrollTop: {
+                        value: 200,
+                        writable: true,
+                    },
+                },
+                writable: true,
+            });
+
+            scrollToTop();
+
+            expect(global.document.documentElement.scrollTop).toEqual(0);
         });
     });
 });

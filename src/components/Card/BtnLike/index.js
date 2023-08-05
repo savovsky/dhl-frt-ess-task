@@ -10,6 +10,7 @@ import {
 } from '../../../store/sliceFavorites';
 
 import useSliceFavorites from '../../../customHooks/useSliceFavorites';
+import useSliceGeneral from '../../../customHooks/useSliceGeneral';
 import ButtonIcon from '../../ButtonIcon';
 
 import type { Photo } from '../../../flowTypes/photosTypes';
@@ -21,6 +22,7 @@ type Props = {
 function BtnLike({ photo }: Props) {
     const dispatch = useDispatch();
     const { favoritePhotos } = useSliceFavorites();
+    const { isAlbumView } = useSliceGeneral();
 
     const isPhotoLiked = !!favoritePhotos.find(
         (item: Photo) => item.id === photo.id,
@@ -28,7 +30,7 @@ function BtnLike({ photo }: Props) {
 
     const handleOnClick = () => {
         if (isPhotoLiked) {
-            if (favoritePhotos.length === 1) {
+            if (favoritePhotos.length === 1 && !isAlbumView) {
                 dispatch(toggleIsAlbumView());
             }
 
