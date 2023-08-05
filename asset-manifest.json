@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/dhl-frt-ess-task/static/css/main.58462fbc.css",
-    "main.js": "/dhl-frt-ess-task/static/js/main.022ef316.js",
+    "main.css": "/dhl-frt-ess-task/static/css/main.315d45f7.css",
+    "main.js": "/dhl-frt-ess-task/static/js/main.09d02ece.js",
+    "static/media/intro-tertiary.jpg": "/dhl-frt-ess-task/static/media/intro-tertiary.ef56a121c50e819d8fc7.jpg",
     "index.html": "/dhl-frt-ess-task/index.html",
-    "main.58462fbc.css.map": "/dhl-frt-ess-task/static/css/main.58462fbc.css.map",
-    "main.022ef316.js.map": "/dhl-frt-ess-task/static/js/main.022ef316.js.map"
+    "main.315d45f7.css.map": "/dhl-frt-ess-task/static/css/main.315d45f7.css.map",
+    "main.09d02ece.js.map": "/dhl-frt-ess-task/static/js/main.09d02ece.js.map"
   },
   "entrypoints": [
-    "static/css/main.58462fbc.css",
-    "static/js/main.022ef316.js"
+    "static/css/main.315d45f7.css",
+    "static/js/main.09d02ece.js"
   ]
 }
