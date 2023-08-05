@@ -47,13 +47,12 @@ export const apiAlbums = createApi({
                     try {
                         const { data } = await queryFulfilled;
 
-                        dispatch(setCurrentAlbum(data.albums[0].id));
+                        if (!args) {
+                            dispatch(setCurrentAlbum(data.albums[0].id));
+                        }
                     } catch (error) {
                         // eslint-disable-next-line no-console
-                        console.error(
-                            'fetchAlbums-onQueryStarted-error',
-                            error,
-                        );
+                        console.error('fetchAlbums-error', error);
                     }
                 },
             }),
