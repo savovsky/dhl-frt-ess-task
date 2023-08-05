@@ -17,7 +17,7 @@ function Card({ photo }: Props) {
 
     return (
         <>
-            <div>{photo.title}</div>
+            <p>{photo.title}</p>
             <BtnLike photoId={photo.id} />
         </>
     );

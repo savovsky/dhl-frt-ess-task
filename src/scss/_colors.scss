@@ -1,5 +1,6 @@
-$color-white: #ffffff;
 $color-black: #000000;
+$color-white: #ffffff;
+$color-white-transparent: rgb(255, 255, 255, 0.3);
 
 $color-dark: #2d3137;
 $color-fog: #58595b;
@@ -19,6 +20,7 @@ $color-primary: #d9232e;
 $color-secondary: #ffcc10;
 $color-accent: $color-luminous-vivid-orange;
 $color-warn: $color-vivid-red;
+$color-bg-gradient-white: linear-gradient(0deg, $color-white-transparent 5%, $color-white 25%);
 
 $color-shadow: (
     '1': rgba(0, 0, 0, 0.20),

@@ -10,7 +10,7 @@ import Photos from './Photos';
 import { useFetchAlbumPhotosQuery } from '../../../../store/apiAlbums';
 
 function PhotosConatiner() {
-    const { currentAlbum } = useSliceGeneral();
+    const { currentAlbum, isAlbumView } = useSliceGeneral();
 
     const {
         isFetching,
@@ -18,19 +18,27 @@ function PhotosConatiner() {
         error,
         isSuccess,
         data,
-    } = useFetchAlbumPhotosQuery(currentAlbum);
+    } = useFetchAlbumPhotosQuery(currentAlbum, { skip: !currentAlbum });
+
+    const photos = () => {
+        if (isAlbumView) {
+            return data.photos;
+        }
+
+        return [];
+    };
 
     const conditionalContent = () => {
         if (isFetching) {
             return (
-                <div className="loading-wrapper">
+                <div className="loading-wrapper seconadry">
                     <LoaderSpin />
                 </div>
             );
         } else if (isError) {
             return <HttpError error={error} margin="50px" />;
         } else if (isSuccess) {
-            return <Photos photos={data.photos} />;
+            return <Photos photos={photos()} />;
         }
 
         return null;
