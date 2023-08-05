@@ -57,14 +57,14 @@
     }
 }
 
-.photos-conatiner {
-    @include display-flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.cards {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 40px;
 }
 
 .image-container {
-    min-width: 190px;
-    height: 190px;
+    min-height: 230px;
     background-color: $color-slate-medium;
 }

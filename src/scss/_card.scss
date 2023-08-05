@@ -6,21 +6,17 @@
 }
 
 .card {
-    @include display-flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-    width: 190px;
-    min-height: 300px;
-    margin: 20px;
+    display: grid;
     padding: 10px;
     border: 1px solid $color-slate;
     border-radius: 3px;
     background-color: $color-white;
+    justify-self: stretch;
 
     img {
+        display: block;
         width: 100%;
-        min-height: 190px;
+        height: 100%;
     }
 
     p {
@@ -33,4 +29,10 @@
         @include btn-shadow-hover;
         @include transition;
     }
+}
+
+.card-footer {
+    @include display-flex;
+    justify-content: space-between;
+    padding: 5px;
 }

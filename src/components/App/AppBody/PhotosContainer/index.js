@@ -6,7 +6,7 @@ import useSliceGeneral from '../../../../customHooks/useSliceGeneral';
 import useSliceFavorites from '../../../../customHooks/useSliceFavorites';
 import LoaderSpin from '../../../LoaderSpin';
 import HttpError from '../../../HttpError';
-import Photos from './Photos';
+import Cards from './Cards';
 
 import { useFetchAlbumPhotosQuery } from '../../../../store/apiAlbums';
 
@@ -40,7 +40,7 @@ function PhotosConatiner() {
         } else if (isError) {
             return <HttpError error={error} margin="50px" />;
         } else if (isSuccess) {
-            return <Photos photos={photos()} />;
+            return <Cards photos={photos()} />;
         }
 
         return null;

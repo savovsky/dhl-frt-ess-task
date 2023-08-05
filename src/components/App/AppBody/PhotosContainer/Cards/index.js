@@ -10,16 +10,16 @@ type Props = {
     photos: Array<Photo>,
 };
 
-function Photos({ photos }: Props) {
+function Cards({ photos }: Props) {
     return (
-        <>
+        <div className="cards" data-testid="cards">
             {photos.map((photo: Photo) => (
                 <article key={photo.id} className="card" data-testid="card">
                     <Card photo={photo} />
                 </article>
             ))}
-        </>
+        </div>
     );
 }
 
-export default Photos;
+export default Cards;
