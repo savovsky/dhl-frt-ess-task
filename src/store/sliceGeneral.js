@@ -1,21 +1,27 @@
+// @flow
 /* eslint-disable no-param-reassign */
 
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+import type { GeneralSlice } from '../flowTypes';
+
+type Slice = GeneralSlice;
+type Action = { payload: string };
+
+const initialState: Slice = {
     isAlbumView: true,
-    currentAlbum: '1',
+    currentAlbum: null,
 };
 
 export const sliceGeneral = createSlice({
     name: 'general',
     initialState,
     reducers: {
-        toggleIsAlbumView(state) {
+        toggleIsAlbumView(state: Slice) {
             state.isAlbumView = !state.isAlbumView;
         },
 
-        setCurrentAlbum(state, action) {
+        setCurrentAlbum(state: Slice, action: Action) {
             state.currentAlbum = action.payload;
         },
     },

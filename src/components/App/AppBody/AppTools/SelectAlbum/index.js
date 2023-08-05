@@ -12,9 +12,10 @@ import type { Option } from '../../../../../flowTypes';
 
 type Props = {
     optionItems: Array<Option>,
+    currentAlbum: string,
 };
 
-function SelectAlbum({ optionItems }: Props) {
+function SelectAlbum({ optionItems, currentAlbum }: Props) {
     const dispatch = useDispatch();
     const handleComboOnOptionSelect = (inputId: string, optionId: string) => {
         dispatch(setCurrentAlbum(optionId));
@@ -25,7 +26,7 @@ function SelectAlbum({ optionItems }: Props) {
             <ComboBox
                 inputId={str.albums}
                 label={str.albums}
-                currentOptionId=""
+                currentOptionId={currentAlbum}
                 optionItems={optionItems}
                 handleComboOnOptionSelect={handleComboOnOptionSelect}
                 maxWidth="550px"

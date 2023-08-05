@@ -13,11 +13,16 @@ type Props = {
 };
 
 function AppTools({ optionItems }: Props) {
-    const { isAlbumView } = useSliceGeneral();
+    const { isAlbumView, currentAlbum } = useSliceGeneral();
 
     const conditionalContent = () => {
         if (isAlbumView) {
-            return <SelectAlbum optionItems={optionItems} />;
+            return (
+                <SelectAlbum
+                    optionItems={optionItems}
+                    currentAlbum={currentAlbum}
+                />
+            );
         } else {
             return <div />;
         }

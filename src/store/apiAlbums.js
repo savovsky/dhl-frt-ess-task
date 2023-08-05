@@ -1,6 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+import { setCurrentAlbum } from './sliceGeneral';
+
 import handleAlbumsData from '../utils/handleAlbumsData';
+import handleAlbumPhotosData from '../utils/handleAlbumPhotosData';
 import commonUtils from '../utils/commonUtils';
 import {
     timeout,
@@ -39,6 +42,23 @@ export const apiAlbums = createApi({
                 },
 
                 transformErrorResponse: response => httpErrorMessage(response),
+
+                async onQueryStarted(args, { dispatch, queryFulfilled }) {
+                    try {
+                        const { data } = await queryFulfilled;
+
+                        // eslint-disable-next-line no-console
+                        console.log('onQueryStarted', data);
+
+                        dispatch(setCurrentAlbum(data.albums[0].id));
+                    } catch (error) {
+                        // eslint-disable-next-line no-console
+                        console.error(
+                            'fetchAlbums-onQueryStarted-error',
+                            error,
+                        );
+                    }
+                },
             }),
 
             fetchAlbumPhotos: builder.query({
@@ -47,6 +67,12 @@ export const apiAlbums = createApi({
                         method: 'GET',
                         url: `${albumId}/photos`,
                     };
+                },
+
+                transformResponse: response => {
+                    const photos = handleAlbumPhotosData(response);
+
+                    return { photos };
                 },
 
                 transformErrorResponse: response => httpErrorMessage(response),

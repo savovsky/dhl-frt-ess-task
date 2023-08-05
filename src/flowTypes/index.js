@@ -8,6 +8,7 @@ export type Option = {
 
 export type GeneralSlice = {
     isAlbumView: boolean,
+    currentAlbum: string | null,
 };
 
 export type FavoritesSlice = {
