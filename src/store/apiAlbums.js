@@ -47,9 +47,6 @@ export const apiAlbums = createApi({
                     try {
                         const { data } = await queryFulfilled;
 
-                        // eslint-disable-next-line no-console
-                        console.log('onQueryStarted', data);
-
                         dispatch(setCurrentAlbum(data.albums[0].id));
                     } catch (error) {
                         // eslint-disable-next-line no-console

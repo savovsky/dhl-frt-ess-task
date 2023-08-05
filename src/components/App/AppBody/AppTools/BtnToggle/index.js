@@ -33,7 +33,7 @@ function BtnToggle({ isAlbumView }: Props) {
                 >
                     <ButtonIcon
                         handleOnClick={handleOnClick}
-                        icon="heart"
+                        icon={hasFavoritePhotos ? 'heart-filled' : 'heart'}
                         label={str.btnFavorite}
                         arialabel="Display Favorite Photos Button"
                         isDisabled={!hasFavoritePhotos}

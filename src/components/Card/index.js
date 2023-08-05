@@ -16,10 +16,10 @@ function Card({ photo }: Props) {
     // const { isAlbumView } = useSliceGeneral();
 
     return (
-        <article className="card" data-testid="card">
+        <>
             <div>{photo.title}</div>
             <BtnLike photoId={photo.id} />
-        </article>
+        </>
     );
 }
 

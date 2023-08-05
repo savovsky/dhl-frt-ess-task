@@ -2,13 +2,17 @@
 
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faImages } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import {
+    faHeart as heartFilled,
+    faImages,
+} from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
     /** Handle the onClick event */
     handleOnClick: Function,
     /** What icon to use? */
-    icon: 'heart' | 'images',
+    icon: 'heart' | 'heart-filled' | 'images',
     /** What button label to use? */
     label?: string,
     /** What 'aria-label' label to use? */
@@ -66,6 +70,7 @@ function ButtonIcon({
     const iconMap = () => {
         const icons = {
             heart: faHeart,
+            'heart-filled': heartFilled,
             images: faImages,
         };
 

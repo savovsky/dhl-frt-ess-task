@@ -8,7 +8,7 @@ import type {
     Photo,
 } from '../flowTypes/photosTypes';
 
-const { isArray } = commonUtils;
+const { isArray, capitalizeFirstChar } = commonUtils;
 
 const handleAlbumPhotosData = (response: AlbumPhotosResponse): Array<Photo> => {
     const photos = [];
@@ -26,7 +26,7 @@ const handleAlbumPhotosData = (response: AlbumPhotosResponse): Array<Photo> => {
                     albumId: `${item.id}`,
                     id: `${item.id}`,
                     thumbnailUrl: item.title,
-                    title: item.title,
+                    title: capitalizeFirstChar(item.title),
                     url: item.title,
                 });
             }

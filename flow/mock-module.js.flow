@@ -1,4 +1,4 @@
 /* eslint-disable no-empty */
 
-declare module '@fortawesome' {
+declare module 'mock-module' {
 }

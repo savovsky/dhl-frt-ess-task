@@ -5,23 +5,23 @@ import React from 'react';
 import useSliceGeneral from '../../../../customHooks/useSliceGeneral';
 import LoaderSpin from '../../../LoaderSpin';
 import HttpError from '../../../HttpError';
-// import PhotosContainer from './PhotosContainer';
+import Photos from './Photos';
 
 import { useFetchAlbumPhotosQuery } from '../../../../store/apiAlbums';
 
-function Photos() {
+function PhotosConatiner() {
     const { currentAlbum } = useSliceGeneral();
 
     const {
-        isLoading,
+        isFetching,
         isError,
         error,
         isSuccess,
-        // data,
+        data,
     } = useFetchAlbumPhotosQuery(currentAlbum);
 
     const conditionalContent = () => {
-        if (isLoading) {
+        if (isFetching) {
             return (
                 <div className="loading-wrapper">
                     <LoaderSpin />
@@ -30,17 +30,17 @@ function Photos() {
         } else if (isError) {
             return <HttpError error={error} margin="50px" />;
         } else if (isSuccess) {
-            return <div>Photos</div>;
+            return <Photos photos={data.photos} />;
         }
 
         return null;
     };
 
     return (
-        <section className="photos" data-testid="photos">
+        <section className="photos-conatiner" data-testid="photos-conatiner">
             {conditionalContent()}
         </section>
     );
 }
 
-export default Photos;
+export default PhotosConatiner;

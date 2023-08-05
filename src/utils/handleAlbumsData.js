@@ -5,7 +5,7 @@ import commonUtils from './commonUtils';
 import type { Option } from '../flowTypes';
 import type { AlbumsResponse, AlbumResponse } from '../flowTypes/albumsTypes';
 
-const { isArray } = commonUtils;
+const { isArray, capitalizeFirstChar } = commonUtils;
 
 const handleAlbumsData = (response: AlbumsResponse): Array<Option> => {
     const albums = [];
@@ -15,7 +15,7 @@ const handleAlbumsData = (response: AlbumsResponse): Array<Option> => {
             if (item.id && item.title) {
                 albums.push({
                     id: `${item.id}`,
-                    value: item.title,
+                    value: capitalizeFirstChar(item.title),
                 });
             }
         });

@@ -19,7 +19,7 @@ export const sliceFavorites = createSlice({
             state.favoritePhotos.push(action.payload);
         },
 
-        removePhotoToFavorites(state: Slice, action: Action) {
+        removePhotoFromFavorites(state: Slice, action: Action) {
             const index = state.favoritePhotos.findIndex(
                 (item: string) => item === action.payload,
             );
@@ -30,4 +30,7 @@ export const sliceFavorites = createSlice({
 });
 
 // Actions
-export const { addPhotoToFavorites } = sliceFavorites.actions;
+export const {
+    addPhotoToFavorites,
+    removePhotoFromFavorites,
+} = sliceFavorites.actions;
