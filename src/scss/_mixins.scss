@@ -14,7 +14,7 @@
 }
 
 @mixin message {
-    @include typography-title1;
+    @include typography-m;
     word-wrap: break-word;
 }
 
@@ -77,18 +77,18 @@
 @mixin options-container {
     position: absolute;
     min-width: 90px;
-    min-height: 36px;
+    min-height: 40px;
     background-color: $color-white;
     z-index: 1;
 }
 
 @mixin container-no-items {
-    @include typography-body3;
-    padding: 0 28px;
+    @include typography-m;
+    color: $color-primary;
 }
 
 @mixin options-list {
-    @include typography-subtitle1;
+    @include typography-m;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -100,7 +100,7 @@
     list-style-type: none;
 
     li {
-        padding: 10px;
+        padding: 14px 15px;
         outline: unset;
         color: $color-fog;
 
@@ -118,7 +118,7 @@
 
         .fel__current-option-icon {
             display: inline-block;
-            min-width: 25px;
+            min-width: 30px;
 
             .fa-check {
                 color: $color-primary;
@@ -128,7 +128,7 @@
 }
 
 @mixin icon-button {
-    @include typography-title3;
+    @include typography-m;
     margin: 0;
     padding: 0;
     border: unset;
@@ -163,9 +163,9 @@
 }
 
 @mixin text-input-label {
-    @include typography-body4;
+    @include typography-m-bold;
     display: inline-block;
-    padding: 0 0 3px 10px;
+    padding: 0 0 5px 10px;
     color: $color-fog;
     text-transform: capitalize;
 
@@ -180,9 +180,9 @@
 
 @mixin text-input {
     @include transition;
-    @include typography-title1;
+    @include typography-m;
     min-width: 50px;
-    padding: 5px 10px;
+    padding: 10px;
     border: 1px solid $color-fog-light;
     border-radius: 2px;
     outline: none;

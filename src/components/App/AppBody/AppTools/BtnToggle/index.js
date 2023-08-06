@@ -32,7 +32,7 @@ function BtnToggle({ isAlbumView }: Props) {
                 <Tooltip
                     content={str.btnFavorteDisabled}
                     placement="top"
-                    width="150px"
+                    width="180px"
                     isDisabled={hasFavoritePhotos}
                 >
                     <ButtonIcon
@@ -42,7 +42,6 @@ function BtnToggle({ isAlbumView }: Props) {
                         arialabel="Display Favorite Photos Button"
                         isDisabled={!hasFavoritePhotos}
                         dataTestid="favorite-btn"
-                        margin="0 0 0 20px"
                     />
                 </Tooltip>
             );

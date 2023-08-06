@@ -8,7 +8,7 @@ $trans-val: -50%;
 }
 
 .fel__tooltip-body {
-    @include typography-subtitle4;
+    @include typography-s;
     @include card-shadow;
     @include fade-in;
     display: flex;

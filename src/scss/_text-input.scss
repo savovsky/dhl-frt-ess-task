@@ -42,7 +42,7 @@
 .fel__text-input {
     @include text-input;
     width: 100%;
-    height: 36px;
+    height: 40px;
 }
 
 .fel__text-input_label {
@@ -50,10 +50,10 @@
 }
 
 .fel__text-input_error-msg {
-    @include typography-body2;
+    @include typography-s;
     width: 100%;
     min-height: 25px;
-    padding: 5px 10px;
+    padding: 10px 10px 5px;
     color: $color-warn;
     line-height: normal;
     text-align: right;

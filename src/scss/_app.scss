@@ -11,14 +11,14 @@
     background: $color-secondary url('../assets/intro-tertiary.jpg') center 0 no-repeat;
 
     h1 {
-        @include typography-xxl-bold;
+        @include typography-xl-bold;
         margin: 0;
         padding: 0 0 10px;
         color: $color-primary;
     }
 
     h2 {
-        @include typography-xl;
+        @include typography-l;
         margin: 0;
         padding: 0;
         color: $color-black;
@@ -66,5 +66,6 @@
 
 .image-container {
     min-height: 230px;
+    border-radius: 3px;
     background-color: $color-slate-medium;
 }

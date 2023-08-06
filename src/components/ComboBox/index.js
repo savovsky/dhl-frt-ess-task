@@ -292,7 +292,7 @@ ComboBoxBasic.defaultProps = {
     isDisabled: false,
     maxWidth: 'initial',
     optionsTextTransform: 'none',
-    optionsContainerMaxHeight: '250px',
+    optionsContainerMaxHeight: '320px',
     validationErrorInternal: str.selectOptionOrClearInput,
     validationError: '',
     isMultipleSelect: false,

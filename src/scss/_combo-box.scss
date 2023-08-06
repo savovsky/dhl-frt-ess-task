@@ -6,10 +6,10 @@
 .fel__combo-text-input-button {
     @include icon-button;
     position: absolute;
-    top: 23px;
-    right: 3px;
+    top: 25px;
+    right: 5px;
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 22px;
 
     .fa-down {
         padding: 4px 8px 10px;
@@ -23,7 +23,7 @@
 .fel__combo-options-container {
     @include options-container;
     display: flex;
-    top: 60px;
+    top: 65px;
     align-items: center;
     justify-content: center;
     width: calc(100% - 2px);
