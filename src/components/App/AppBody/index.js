@@ -34,7 +34,7 @@ function AppBody() {
             );
         }
 
-        return null;
+        return <AppTools optionItems={data.albums} />;
     };
 
     return (
