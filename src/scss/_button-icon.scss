@@ -5,6 +5,12 @@ $icon-button-offset: 6px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
+
+    @include media-query-under('xs') {
+        white-space: unset;
+    }
+
 
     &.top {
         flex-direction: column-reverse;

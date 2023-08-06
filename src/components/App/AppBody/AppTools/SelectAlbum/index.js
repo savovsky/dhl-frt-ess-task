@@ -29,7 +29,7 @@ function SelectAlbum({ optionItems, currentAlbum }: Props) {
             optionItems={optionItems}
             handleComboOnOptionSelect={handleComboOnOptionSelect}
             moreProps={{
-                style: { width: '560px', margin: '0 20px 0 0' },
+                style: { width: '560px', margin: '0 30px 0 0' },
             }}
         />
     );

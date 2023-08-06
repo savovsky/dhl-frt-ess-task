@@ -52,7 +52,7 @@
 .fel__text-input_error-msg {
     @include typography-s;
     width: 100%;
-    min-height: 25px;
+    min-height: 30px;
     padding: 10px 10px 5px;
     color: $color-warn;
     line-height: normal;

@@ -134,18 +134,26 @@
     border: unset;
     outline: unset;
     background-color: unset;
-    color: $color-fog;
+    color: $color-primary;
     text-transform: capitalize;
     cursor: pointer;
 
-    &:focus-within,
-    &:focus,
     &:hover {
         @include transition;
-        color: $color-primary;
+        color: $color-dark;
 
         &.active {
-            color: $color-fog;
+            color: $color-primary;
+        }
+    }
+
+    &:focus-within,
+    &:focus {
+        @include transition;
+        color: $color-secondary;
+
+        &.active {
+            color: $color-primary;
         }
     }
 
@@ -155,10 +163,11 @@
 
     &.disabled {
         @include item-disabled;
+        color: $color-fog;
     }
 
     &.active {
-        color: $color-accent;
+        color: $color-primary;
     }
 }
 

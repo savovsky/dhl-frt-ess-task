@@ -7,11 +7,11 @@
 
 .card {
     display: grid;
+    max-width: 350px;
     padding: 10px;
     border: 1px solid $color-slate;
     border-radius: 3px;
     background-color: $color-white;
-    justify-self: stretch;
 
     img {
         display: block;
@@ -34,7 +34,7 @@
 }
 
 .card-footer {
-    @include display-flex;
+    display: flex;
     justify-content: space-between;
     padding: 5px;
 }

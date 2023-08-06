@@ -27,28 +27,33 @@
 
 .app-body {
     width: 60%;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 40px;
 
     @include media-query-under('md') {
+        width: 80%;
+        padding: 20px;
+    }
+
+    @include media-query-under('xs') {
         width: 90%;
     }
 }
 
 .app-tools {
-    @include display-flex;
+    display: flex;
     position: sticky;
     top: 0;
     align-items: center;
     justify-content: space-between;
     min-height: 100px;
-    padding: 20px 0 30px;
+    padding: 20px 0 50px;
     background: $color-bg-gradient-white;
     z-index: 2;
 }
 
 .loading-wrapper {
-    @include display-flex;
+    display: flex;
     justify-content: center;
     margin: 210px 0 0;
 
@@ -60,6 +65,7 @@
 
 .cards {
     display: grid;
+    justify-content: stretch;
     padding: 10px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 40px;
