@@ -1,4 +1,4 @@
-export const timeout = 30000; // 30sec
+export const timeout = 15000; // 15sec
 export const keepUnusedDataFor = 300; // 5min
 export const protocol = 'https://';
 export const hostname = 'jsonplaceholder.typicode.com';

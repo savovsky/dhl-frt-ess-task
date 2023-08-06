@@ -53,6 +53,10 @@
 
     h3 {
         @include typography-l-bold;
+
+        @include media-query-under('xs') {
+            display: none;
+        }
     }
 }
 

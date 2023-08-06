@@ -38,7 +38,7 @@ function PhotosConatiner() {
                 </div>
             );
         } else if (isError) {
-            return <HttpError error={error} margin="50px" />;
+            return <HttpError error={error} />;
         } else if (isSuccess) {
             return <Cards photos={photos()} />;
         }

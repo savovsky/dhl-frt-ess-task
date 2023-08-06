@@ -108,7 +108,6 @@ function scrollToTop(): void {
     }
 }
 
-// TODO add description and tests
 const capitalizeFirstChar = (text: string) => {
     return text.charAt(0).toUpperCase() + text.slice(1);
 };

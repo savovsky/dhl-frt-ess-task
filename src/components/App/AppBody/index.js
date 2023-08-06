@@ -24,7 +24,7 @@ function AppBody() {
                 </div>
             );
         } else if (isError) {
-            return <HttpError error={error} margin="50px" />;
+            return <HttpError error={error} margin="50px 0" />;
         } else if (isSuccess) {
             return (
                 <>
