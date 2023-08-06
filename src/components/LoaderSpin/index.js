@@ -23,7 +23,7 @@ function LoaderSpin({ dataTestid }: Props) {
 }
 
 LoaderSpin.defaultProps = {
-    dataTestid: 'loader-spin',
+    dataTestid: 'fel-loader-spin',
 };
 
 export default LoaderSpin;

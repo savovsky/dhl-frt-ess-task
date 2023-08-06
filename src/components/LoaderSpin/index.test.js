@@ -7,7 +7,7 @@ afterEach(cleanup);
 
 describe('<LoaderSpin />', () => {
     const testMsg = 'Should render Component correctly';
-    const componentId = 'loader-spin';
+    const componentId = 'fel-loader-spin';
 
     test(`${testMsg}`, () => {
         const { getByTestId } = render(<LoaderSpin />);
