@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable no-param-reassign */
 
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -28,6 +29,10 @@ export const sliceFavorites = createSlice({
 
             state.favoritePhotos.splice(index, 1);
         },
+
+        clearAllFavoritePhotos(state: Slice) {
+            state.favoritePhotos = [];
+        },
     },
 });
 
@@ -35,4 +40,5 @@ export const sliceFavorites = createSlice({
 export const {
     addPhotoToFavorites,
     removePhotoFromFavorites,
+    clearAllFavoritePhotos,
 } = sliceFavorites.actions;

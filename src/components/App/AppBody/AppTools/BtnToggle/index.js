@@ -47,14 +47,19 @@ function BtnToggle({ isAlbumView }: Props) {
             );
         } else {
             return (
-                <ButtonIcon
-                    handleOnClick={handleOnClick}
-                    icon="images"
-                    label={str.btnAlbums}
-                    arialabel="Display Albums View Button"
-                    dataTestid="albums-btn"
-                    margin="0 0 0 20px"
-                />
+                <Tooltip
+                    content={str.btnBackToAlbums}
+                    placement="top"
+                    width="105px"
+                >
+                    <ButtonIcon
+                        handleOnClick={handleOnClick}
+                        icon="images"
+                        label={str.btnAlbums}
+                        arialabel="Display Albums View Button"
+                        dataTestid="albums-btn"
+                    />
+                </Tooltip>
             );
         }
     };

@@ -3,8 +3,10 @@
 import React from 'react';
 
 import useSliceGeneral from '../../../../customHooks/useSliceGeneral';
+import str from '../../../../utils/stringsUtils';
 import SelectAlbum from './SelectAlbum';
 import BtnToggle from './BtnToggle';
+import BtnClearAll from './BtnClearAll';
 
 import type { Option } from '../../../../flowTypes';
 
@@ -18,20 +20,28 @@ function AppTools({ optionItems }: Props) {
     const conditionalContent = () => {
         if (isAlbumView) {
             return (
-                <SelectAlbum
-                    optionItems={optionItems}
-                    currentAlbum={currentAlbum}
-                />
+                <>
+                    <SelectAlbum
+                        optionItems={optionItems}
+                        currentAlbum={currentAlbum}
+                    />
+                    <BtnToggle isAlbumView={isAlbumView} />
+                </>
             );
         } else {
-            return <div />;
+            return (
+                <>
+                    <BtnToggle isAlbumView={isAlbumView} />
+                    <h3>{str.favoritePhotos}</h3>
+                    <BtnClearAll />
+                </>
+            );
         }
     };
 
     return (
         <section className="app-tools" data-testid="app-tools">
             {conditionalContent()}
-            <BtnToggle isAlbumView={isAlbumView} />
         </section>
     );
 }

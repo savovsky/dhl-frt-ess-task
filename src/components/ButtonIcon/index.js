@@ -6,13 +6,14 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import {
     faHeart as heartFilled,
     faImages,
+    faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
     /** Handle the onClick event */
     handleOnClick: Function,
     /** What icon to use? */
-    icon: 'heart' | 'heart-filled' | 'images',
+    icon: 'heart' | 'heart-filled' | 'images' | 'trash',
     /** What button label to use? */
     label?: string,
     /** What 'aria-label' label to use? */
@@ -72,6 +73,7 @@ function ButtonIcon({
             heart: faHeart,
             'heart-filled': heartFilled,
             images: faImages,
+            trash: faTrash,
         };
 
         return icons[icon];

@@ -4,6 +4,7 @@ export default {
     // Titles
     appTitle: 'DHL FRT ESS',
     appSubTitle: 'React JS Dev - Interview Task',
+    favoritePhotos: 'Favorite Photos',
 
     // Combo Box
     noMatches: 'No matches found',
@@ -23,11 +24,14 @@ export default {
     // Buttons
     btnFavorite: 'favorite photos',
     btnAlbums: 'albums',
+    btnClearAll: 'clear all',
 
     // Tooltips
     btnFavorteDisabled: 'They are no selected photos',
+    btnClearAllFaforites: 'Clear all favorite photos',
+    btnBackToAlbums: 'Back to Albums',
 
-    // Tooltip
+    // Tooltip placement
     top: 'top',
     right: 'right',
     bottom: 'bottom',

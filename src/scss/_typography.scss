@@ -14,6 +14,13 @@ $font: sans-serif, Arial, Verdana;
     line-height: normal;
 }
 
+@mixin typography-l-bold {
+    font-family: $font;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: normal;
+}
+
 @mixin typography-m {
     font-family: $font;
     font-size: 1rem;

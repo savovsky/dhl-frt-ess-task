@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { setCurrentAlbum } from '../../../../../store/sliceGeneral';
 
 import str from '../../../../../utils/stringsUtils';
+import commonUtils from '../../../../../utils/commonUtils';
 import ComboBox from '../../../../ComboBox';
 
 import type { Option } from '../../../../../flowTypes';
@@ -15,10 +16,13 @@ type Props = {
     currentAlbum: string,
 };
 
+const { scrollToTop } = commonUtils;
+
 function SelectAlbum({ optionItems, currentAlbum }: Props) {
     const dispatch = useDispatch();
     const handleComboOnOptionSelect = (inputId: string, optionId: string) => {
         dispatch(setCurrentAlbum(optionId));
+        scrollToTop();
     };
 
     return (

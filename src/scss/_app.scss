@@ -50,6 +50,10 @@
     padding: 20px 0 50px;
     background: $color-bg-gradient-white;
     z-index: 2;
+
+    h3 {
+        @include typography-l-bold;
+    }
 }
 
 .loading-wrapper {
@@ -59,7 +63,6 @@
 
     &.seconadry {
         margin: 60px 0 0;
-        padding: 0 0 600px;
     }
 }
 
