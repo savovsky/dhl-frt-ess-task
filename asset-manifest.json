@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/dhl-frt-ess-task/static/css/main.3028b14d.css",
-    "main.js": "/dhl-frt-ess-task/static/js/main.6195b2ba.js",
+    "main.js": "/dhl-frt-ess-task/static/js/main.2633dacb.js",
     "static/media/intro-tertiary.jpg": "/dhl-frt-ess-task/static/media/intro-tertiary.ef56a121c50e819d8fc7.jpg",
     "index.html": "/dhl-frt-ess-task/index.html",
     "main.3028b14d.css.map": "/dhl-frt-ess-task/static/css/main.3028b14d.css.map",
-    "main.6195b2ba.js.map": "/dhl-frt-ess-task/static/js/main.6195b2ba.js.map"
+    "main.2633dacb.js.map": "/dhl-frt-ess-task/static/js/main.2633dacb.js.map"
   },
   "entrypoints": [
     "static/css/main.3028b14d.css",
-    "static/js/main.6195b2ba.js"
+    "static/js/main.2633dacb.js"
   ]
 }
