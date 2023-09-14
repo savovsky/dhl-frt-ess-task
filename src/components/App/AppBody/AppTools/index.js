@@ -7,6 +7,7 @@ import str from '../../../../utils/stringsUtils';
 import SelectAlbum from './SelectAlbum';
 import BtnToggle from './BtnToggle';
 import BtnClearAll from './BtnClearAll';
+import TextInput from '../../../TextInput';
 
 import type { Option } from '../../../../flowTypes';
 
@@ -42,6 +43,16 @@ function AppTools({ optionItems }: Props) {
     return (
         <section className="app-tools" data-testid="app-tools">
             {conditionalContent()}
+            <TextInput
+                inputId="foo"
+                label="First Name"
+                validationError=""
+                value="john"
+                handleTextInputOnChange={() => {}}
+                handleTextInputOnBlur={() => {}}
+                handleTextInputOnClear={() => {}}
+                isDisabled={false}
+            />
         </section>
     );
 }

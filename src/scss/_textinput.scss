@@ -1,0 +1,123 @@
+.text-input_container {
+    width: 100%;
+    margin: 8px 15px 0;
+}
+
+.text-input_wrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 40px;
+    font-size: 14px;
+
+    &:focus,
+    &:hover {
+        .text-input {
+            @include transition;
+            border-color: $color-fog-medium;
+        }
+    }
+
+    &.disabled {
+        &:hover {
+            .text-input {
+                @include transition;
+                border-color: $color-fog-light;
+            }
+        }
+
+        .text-input_label {
+            color: $color-fog-medium;
+        }
+    }
+}
+
+.text-input {
+    @include transition;
+    width: 100%;
+    min-width: 100px;
+    height: 100%;
+    padding: 0 40px 0 15px;
+    border: 1px solid $color-fog-light;
+    border-radius: 4px;
+    outline: none;
+    background-color: unset;
+    color: $color-dark;
+    text-overflow: ellipsis;
+    @supports (-moz-appearance: none) {
+        text-overflow: ellipsis ellipsis;
+    }
+
+    &:focus {
+        @include transition;
+        border-color: $color-fog-medium;
+    }
+
+    &.error {
+        border-color: $color-warn;
+        font-size: inherit;
+    }
+}
+
+.text-input_label {
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    height: auto;
+    transition: 0.2s ease;
+    color: $color-user-interaction;
+    pointer-events: none;
+
+    &.superscript {
+        top: -12px;
+        left: 10px;
+        padding: 2px 5px;
+        background-color: $color-white;
+        color: $color-fog-medium;
+        font-size: 13px;
+    }
+
+    &.error {
+        color: $color-warn;
+    }
+}
+
+.text-input_error-msg {
+    min-height: 30px;
+    padding: 5px 10px;
+    color: $color-warn;
+    font-size: 12px;
+    line-height: normal;
+    text-align: right;
+    text-transform: initial;
+
+    &::first-letter {
+        text-transform: capitalize;
+    }
+}
+
+// .button_clear-text {
+//     @include icon-button;
+//     position: absolute;
+//     top: 7px;
+//     right: 8px;
+//     padding: 4px 7px;
+
+//     svg {
+//         &.uig-svg-icon {
+//             width: 10px;
+//             height: 10px;
+//             margin: 0;
+//             padding: 0;
+
+//             path {
+//                 transition: fill 1s ease-out;
+//                 fill: $color-user-interaction;
+//             }
+//         }
+//     }
+
+//     &.hidden {
+//         display: none;
+//     }
+// }
