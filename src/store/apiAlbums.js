@@ -55,6 +55,8 @@ export const apiAlbums = createApi({
                         console.error('fetchAlbums-error', error);
                     }
                 },
+
+                // providesTags: [invalidationTags.reason],
             }),
 
             fetchAlbumPhotos: builder.query({
@@ -72,10 +74,100 @@ export const apiAlbums = createApi({
                 },
 
                 transformErrorResponse: response => httpErrorMessage(response),
+
+                // invalidatesTags: [invalidationTags.reason],
+            }),
+
+            previewPrice: builder.mutation({
+                query: args => {
+                    return {
+                        method: 'POST',
+                        url: '/price',
+                        body: args.postBody,
+                    };
+                },
+
+                transformResponse: response => {
+                    return {
+                        recipients: handleRecipientsPreviewData(response),
+                        totals: handleOrderTotalsData(response),
+                        general: handleGeneralData(response),
+                        isDataValid: isPayloadValid(
+                            model,
+                            response,
+                            'previewPrice',
+                        ),
+                    };
+                },
+
+                transformErrorResponse: response => httpErrorMessage(response),
+
+                async onQueryStarted(args, { dispatch, queryFulfilled }) {
+                    try {
+                        const { data } = await queryFulfilled;
+
+                        dispatch(updateRecipientsStore(data.recipients));
+                        dispatch(setNewTotalsStore(data.totals));
+                        dispatch(
+                            setShippingMethods(data.general.shippingMethods),
+                        );
+
+                        dispatch(apiAddressVerify.util.resetApiState());
+
+                        if (args.editRecipientContact) {
+                            dispatch(setModalCase(keys.fetchPreviewPrice));
+                        }
+                    } catch (error) {
+                        // eslint-disable-next-line no-console
+                        console.error(
+                            'previewPrice-onQueryStarted-error',
+                            error,
+                        );
+                    }
+                },
+
+                // async onQueryStarted(args, { dispatch, queryFulfilled }) {
+                //     await queryFulfilled;
+                //     dispatch(
+                //         apiProductTypes.util.invalidateTags([
+                //             invalidationTags.productTypes,
+                //         ]),
+                //     );
+                // },
+
+                // invaldatesTags: (result, error, args) => {
+                //     if (...) {
+                //         return []; // Will not clear the cache
+                //     }
+
+                //     return [invalidationTags.reason]; 
+                // }
             }),
         };
     },
 });
 
 // Auto-generated React hooks
-export const { useFetchAlbumsQuery, useFetchAlbumPhotosQuery } = apiAlbums;
+export const {
+    useFetchAlbumsQuery,
+    useFetchAlbumPhotosQuery,
+    usePreviewPriceMutation,
+} = apiAlbums;
+
+// const [
+//     previewPrice,
+//     {
+//         isError: previewPriceIsError,
+//         isSuccess: previewPriceIsSuccess,
+//     },
+// ] = usePreviewPriceMutation({ fixedCacheKey: cacheKeys.sharedPreviewPrice });
+
+// const [
+//     ,
+//     {
+//         isLoading: previewPriceIsLoading,
+//         isError: previewPriceIsError,
+//         error: previewPriceError,
+//         reset: resetPreviewPriceMutation,
+//     },
+// ] = usePreviewPriceMutation({ fixedCacheKey: cacheKeys.sharedPreviewPrice });
